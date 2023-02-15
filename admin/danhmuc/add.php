@@ -16,6 +16,7 @@
                 <input type="submit" value="Thêm Mới">
                 <input type="reset" value="Nhập Lại">
                 <a href="#"><input type="button" value="Danh Sách"></a>
+                <input type="checkbox" value="Đặt">
             </div>
         </form>
     </div>
