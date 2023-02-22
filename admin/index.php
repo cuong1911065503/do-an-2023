@@ -1,4 +1,5 @@
 <?php
+    include "../model/pdo.php";
     include "header.php";
     // controller
 
@@ -6,10 +7,23 @@
         $act=$_GET['act'];
         switch ($act){
             case 'adddanhmuc':
+                // kiểm tra người dùng có nhấn vào nút add hay không
+
+                if(isset($_POST['themmoi'])){
+                    $tenloai=$_POST['tenloai'];
+                    $sql="insert into danhmuc(name) values('$tenloai')";
+                    pdo_execute($sql);
+                    $thongbao="Thêm Thành Công";
+                }
+
                 include "danhmuc/add.php";
                 break;
-                case 'addsanpham':
-                    include "sanpham/add.php";
+                case 'listdanhmuc':
+
+                    $sql="select * from danhmuc order by name";
+                    $listdanhmuc=pdo_query($sql);
+
+                    include "danhmuc/list.php";
                     break;
             default:
                 include "home.php";
