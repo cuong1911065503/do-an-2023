@@ -1,5 +1,6 @@
 <?php
     include "../model/pdo.php";
+    include "../model/danhmuc.php";
     include "header.php";
     // controller
 
@@ -11,17 +12,14 @@
 
                 if(isset($_POST['themmoi'])&&($_POST['themmoi'])){
                     $tenloai=$_POST['tenloai'];
-                    $sql="insert into danhmuc(name) values('$tenloai')";
-                    pdo_execute($sql);
+                    insert_danhmuc($tenloai);
                     $thongbao="Thêm Thành Công";
                 }
 
                 include "danhmuc/add.php";
                 break;
             case 'listdanhmuc':
-
-                    $sql="select * from danhmuc order by id desc";
-                    $listdanhmuc=pdo_query($sql);
+                    $listdanhmuc=loadAll_danhmuc($sql);
 
                     include "danhmuc/list.php";
                     break;
@@ -29,20 +27,16 @@
             case'xoadanhmuc':
                 if (isset($_GET['id'])&&($_GET['id']>0)) {
                     # code...
-                    $sql="delete from danhmuc where id=".$_GET['id'];
-                    pdo_execute($sql);
+                    delete_danhmuc($_GET['id']);
                 }
-                    $sql="select * from danhmuc order by id desc";
-                    $listdanhmuc=pdo_query($sql);
+                    $listdanhmuc=loadAll_danhmuc($sql);
                     include "danhmuc/list.php";
                     break;
 
                 case'suadanhmuc':
                     if (isset($_GET['id'])&&($_GET['id']>0)) {
-                        $sql="select * from danhmuc where id=".$_GET['id'];
-                        $dm=pdo_query_one($sql);
+                        $dm=loadOne_danhmuc($_GET['id']);
                     }
-                    
                     include "danhmuc/update.php";
                     break;
 
@@ -51,13 +45,10 @@
                     if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
                         $tenloai=$_POST['tenloai'];
                         $id=$_POST['id'];
-                        $sql="update danhmuc set name='".$tenloai."' where id=".$id;
-                        pdo_execute($sql);
+                        $update_danhmuc($id,$tenloai);
                         $thongbao="Cập Nhật Thành Công";
                     }
-
-                    $sql="select * from danhmuc order by id desc";
-                    $listdanhmuc=pdo_query($sql);
+                    $listdanhmuc=loadAll_danhmuc($sql);
                     include "danhmuc/list.php";
                     break;
             default:
