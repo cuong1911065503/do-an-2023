@@ -14,11 +14,13 @@
             <?php
             foreach($listdanhmuc as $danhmuc){
                 extract($danhmuc);
+                $suadanhmuc = "index.php?act=suadanhmuc&id=".$id;
+                $xoadanhmuc = "index.php?act=xoadanhmuc&id=".$id;
                 echo '<tr>
                 <td><input type="checkbox" name="" id=""></td>
                 <td>'.$id.'</td>
                 <td>'.$name.'</td>
-                <td><input type="button" value="Sửa"> <input type="button" value="Xóa"></td>
+                <td><a href="'.$suadanhmuc.'"><input type="button" value="Sửa"></a> <a href="'.$xoadanhmuc.'"><input type="button" value="Xóa"></a></td>
                 </tr>';
             }
             ?>
