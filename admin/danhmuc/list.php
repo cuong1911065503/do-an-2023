@@ -35,10 +35,12 @@
         </div>
     </div>
 </div>
-<style>
-    .frmdsloai table{
-    width: 100%;
-    border-collapse: collapse;
+
+<!-- <style>
+
+.frmdsloai table{
+width: 100%;
+border-collapse: collapse;
 }
 .frmdsloai table th:nth-child(1){
     width: 10%;
@@ -61,4 +63,5 @@
     padding: 10px 20px;
     border: 1px #CCC solid;
 }
-</style>
+
+</style> -->

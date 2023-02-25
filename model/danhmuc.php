@@ -21,4 +21,5 @@ function update_danhmuc($id,$tenloai){
     $sql="update danhmuc set name='".$tenloai."' where id=".$id;
     pdo_execute($sql);
 }
+
 ?>
