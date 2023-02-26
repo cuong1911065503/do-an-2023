@@ -24,8 +24,11 @@ function loadOne_sanpham($id){
     $dm=pdo_query_one($sql);
     return $dm;
 }
-function update_sanpham($id,$tenloai){
-    $sql="update sanpham set name='".$tenloai."' where id=".$id;
+function update_sanpham($id,$iddanhmuc,$tensp,$giasp,$hinh,$mota){
+    if($hinh!="")
+        $sql="update sanpham set name='".$iddanhmuc."', name='".$tensp."', gia='".$giasp."', img='".$hinh."', mota='".$mota."' where id=".$id;
+    else 
+        $sql="update sanpham set name='".$iddanhmuc."', name='".$tensp."', gia='".$giasp."', mota='".$mota."' where id=".$id;
     pdo_execute($sql);
 }
 

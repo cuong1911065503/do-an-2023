@@ -99,26 +99,39 @@
                     # code...
                     delete_sanpham($_GET['id']);
                 }
-                    $listdanhmuc=loadAll_danhmuc();
+                    $listsanpham=loadAll_sanpham("",0);
                     include "sanpham/list.php";
             break;
 
             case'suasanpham':
                 if (isset($_GET['id'])&&($_GET['id']>0)) {
-                    $dm=loadOne_sanpham($_GET['id']);
+                    $sanpham=loadOne_sanpham($_GET['id']);
                 }
+                $listdanhmuc=loadAll_danhmuc();
                 include "sanpham/update.php";
             break;
 
             case'updatesanpham':
 
                 if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
-                    $tenloai=$_POST['tenloai'];
                     $id=$_POST['id'];
-                    $update_sanpham($id,$tenloai);
+                    $iddanhmuc=$_POST['iddanhmuc'];
+                    $tensp=$_POST['tensp'];
+                    $giasp=$_POST['giasp'];
+                    $hinh=$_FILES['hinh']['name'];
+                    $mota=$_POST['mota'];
+                    $target_dir = "../upload/";
+                    $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                    if(move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)){
+                        // echo "". htmlspecialchars(basename($_FILES["hinh"]["name"])). "hãy upload lại.";
+                    }else{
+                        // echo "Không có ảnh";
+                    }
+                    update_sanpham($id,$iddanhmuc,$tensp,$giasp,$hinh,$mota);
                     $thongbao="Cập Nhật Thành Công";
                 }
-                $listsanpham=loadAll_sanpham($kyw,$iddanhmuc);
+                $listdanhmuc=loadAll_danhmuc();
+                $listsanpham=loadAll_sanpham("",0);
                 include "sanpham/list.php";
                 break;
 

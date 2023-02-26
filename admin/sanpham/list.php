@@ -22,8 +22,8 @@
                 <th></th>
                 <th>Mã Loại</th>
                 <th>Tên Sản Phẩm</th>
-                <th>Giá</th>
                 <th>Hình Ảnh</th>
+                <th>Giá</th>
                 <th>Lượt Xem</th>
                 <th></th>
             </tr>
