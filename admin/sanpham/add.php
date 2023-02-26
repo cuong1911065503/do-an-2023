@@ -27,6 +27,7 @@
             <div class="row mb10">
                 Hình Ảnh <br>
                 <input type="file" name="hinh" id="">
+                
             </div>
             <div class="row mb10">
                 Mô Tả <br>

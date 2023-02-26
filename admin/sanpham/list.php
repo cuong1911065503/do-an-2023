@@ -1,7 +1,20 @@
 <div class="row">
-    <div class="row frmtitle">
+    <div class="row frmtitle mb">
         <h1>DANH MỤC SẢN PHẨM</h1>
     </div>
+        <form action="index.php?act=listsanpham" method="post">
+                    <input type="text" name="kyw">
+                    <select name="iddanhmuc">
+                        <option value="0" selected>Tất Cả</option>
+                        <?php
+                                foreach($listdanhmuc as $danhmuc){
+                                    extract($danhmuc);
+                                    echo '<option value='.$id.'>'.$name.'</option>';
+                                }
+                            ?>
+                    </select>
+                    <input type="submit" name="listok" value="GO">
+                </form>
     <div class="row frmcontent">
         <div class="row mb10 frmdsloai">
             <table>
@@ -19,14 +32,20 @@
                 extract($sanpham);
                 $suasanpham = "index.php?act=suasanpham&id=".$id;
                 $xoasanpham = "index.php?act=xoasanpham&id=".$id;
+                $hinhpath="../upload/".$img;
+                if(is_file($hinhpath)){
+                    $hinh="<img src='".$hinhpath."' height='80'>";
+                }else{
+                    $hinh="no photo";
+                }
                 echo '<tr>
                 <td><input type="checkbox" name="" id=""></td>
                 <td>'.$id.'</td>
                 <td>'.$name.'</td>
-                <td>'.$img.'</td>
+                <td>'.$hinh.'</td>
                 <td>'.$gia.'</td>
                 <td>'.$luotxem.'</td>
-                <td><a href="'.$suadanhmuc.'"><input type="button" value="Sửa"></a> <a href="'.$xoadanhmuc.'"><input type="button" value="Xóa"></a></td>
+                <td><a href="'.$suasanpham.'"><input type="button" value="Sửa"></a> <a href="'.$xoasanpham.'"><input type="button" value="Xóa"></a></td>
                 </tr>';
             }
             ?>

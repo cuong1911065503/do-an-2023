@@ -82,7 +82,15 @@
             break;
 
             case 'listsanpham':
-                    $listsanpham=loadAll_sanpham();
+                    if(isset($_POST['listok'])&&($_POST['listok'])){
+                        $kyw=$_POST['kyw'];
+                        $iddanhmuc=$_POST['iddanhmuc'];
+                    }else{
+                        $kyw='';
+                        $iddanhmuc=0;
+                    }
+                    $listsanpham=loadAll_sanpham($kyw,$iddanhmuc);
+                    $listdanhmuc=loadAll_danhmuc();
                     include "sanpham/list.php";
             break;
 
@@ -110,7 +118,7 @@
                     $update_sanpham($id,$tenloai);
                     $thongbao="Cập Nhật Thành Công";
                 }
-                $listsanpham=loadAll_sanpham();
+                $listsanpham=loadAll_sanpham($kyw,$iddanhmuc);
                 include "sanpham/list.php";
                 break;
 
