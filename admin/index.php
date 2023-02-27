@@ -89,7 +89,7 @@
                         $kyw='';
                         $iddanhmuc=0;
                     }
-                    $listsanpham=loadAll_sanpham($kyw,$iddanhmuc);
+                    $listsanpham=loadAll_sanpham_home($kyw,$iddanhmuc);
                     $listdanhmuc=loadAll_danhmuc();
                     include "sanpham/list.php";
             break;
@@ -99,7 +99,7 @@
                     # code...
                     delete_sanpham($_GET['id']);
                 }
-                    $listsanpham=loadAll_sanpham("",0);
+                    $listsanpham=loadAll_sanpham_home("",0);
                     include "sanpham/list.php";
             break;
 
@@ -131,7 +131,7 @@
                     $thongbao="Cập Nhật Thành Công";
                 }
                 $listdanhmuc=loadAll_danhmuc();
-                $listsanpham=loadAll_sanpham("",0);
+                $listsanpham=loadAll_sanpham_home("",0);
                 include "sanpham/list.php";
                 break;
 

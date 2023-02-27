@@ -34,7 +34,25 @@
                     </div>
                 </div>
                 <div class="row ">
-                    <div class="boxsp mr">
+                    <?php
+                        $i=0;
+                        foreach($spnew as $sp){
+                            extract($sp);
+                            $hinh=$img_path.$img;
+                            if(($i==2)||($i==5)||($i==8)){
+                                $mr="";
+                            }else{
+                                $mr="mr";
+                            }
+                            echo '<div class="boxsp '.$mr.'">
+                                        <div class="row img "><img src="'.$hinh.'" alt=""></div>
+                                        <p>$'.$gia.'</p>
+                                        <a href="#">'.$name.'</a>
+                                    </div>';
+                                    $i+-1;
+                        }
+                    ?>
+                    <!-- <div class="boxsp mr">
                         <div class="row img "><img src="images/wlop-16se.jpg" alt=""></div>
                         <p>$30</p>
                         <a href="#">Sao cung dc</a>
@@ -48,7 +66,7 @@
                         <div class="row img"><img src="images/wlop-16se.jpg" alt=""></div>
                         <p>$30</p>
                         <a href="#">Sao cung dc</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="boxphai ">
