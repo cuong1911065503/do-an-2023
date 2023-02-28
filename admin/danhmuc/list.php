@@ -35,33 +35,3 @@
         </div>
     </div>
 </div>
-
-<!-- <style>
-
-.frmdsloai table{
-width: 100%;
-border-collapse: collapse;
-}
-.frmdsloai table th:nth-child(1){
-    width: 10%;
-    padding: 20px;
-    background-color: #CCC;
-}
-.frmdsloai table th:nth-child(2){
-    width: 30%;
-    background-color: #CCC;
-}
-.frmdsloai table th:nth-child(3){
-    width: 40%;
-    background-color: #CCC;
-}
-.frmdsloai table th:nth-child(4){
-    width: 20%;
-    background-color: #CCC;
-}
-.frmdsloai table td{
-    padding: 10px 20px;
-    border: 1px #CCC solid;
-}
-
-</style> -->
