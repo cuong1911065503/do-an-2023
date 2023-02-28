@@ -107,10 +107,17 @@
                     <div class="boxtitle">Danh Muc</div>
                     <div class="boxcontent2 menudoc">
                         <ul>
-                            <li><a href="#">Laptop</a></li>
+                            <?php
+                                foreach($dsdm as $dm){
+                                    extract($dm);
+                                    $linkdm="index.php?act=sanpham&iddanhmuc=".$id;
+                                    echo '<li><a href="'.$linkdm.'">'.$name.'</a></li>';
+                                }
+                            ?>
+                            <!-- <li><a href="#">Laptop</a></li>
                             <li><a href="#">MayTinh</a></li>
                             <li><a href="#">DienThoai</a></li>
-                            <li><a href="#">Camera</a></li>
+                            <li><a href="#">Camera</a></li> -->
                         </ul>
                     </div>
                     <div class="boxfooter searbox">
