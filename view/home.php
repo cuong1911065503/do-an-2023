@@ -44,88 +44,20 @@
                             }else{
                                 $mr="mr";
                             }
+                            $linksp="index.php?act=sanphamct&idsp=".$id;
                             echo '<div class="boxsp '.$mr.'">
                                         <div class="row img "><img src="'.$hinh.'" alt=""></div>
                                         <p>$'.$gia.'</p>
-                                        <a href="#">'.$name.'</a>
+                                        <a href="'.$linksp.'">'.$name.'</a>
                                     </div>';
                                     $i+-1;
                         }
                     ?>
-                    <!-- <div class="boxsp mr">
-                        <div class="row img "><img src="images/wlop-16se.jpg" alt=""></div>
-                        <p>$30</p>
-                        <a href="#">Sao cung dc</a>
-                    </div>
-                    <div class="boxsp mr">
-                        <div class="row img"><img src="images/wlop-16se.jpg" alt=""></div>
-                        <p>$30</p>
-                        <a href="#">Sao cung dc</a>
-                    </div>
-                    <div class="boxsp mr">
-                        <div class="row img"><img src="images/wlop-16se.jpg" alt=""></div>
-                        <p>$30</p>
-                        <a href="#">Sao cung dc</a>
-                    </div> -->
+                    
                 </div>
             </div>
             <div class="boxphai ">
-                <div class="row mb">
-                    <div class="boxtitle">Tai Khoan</div>
-                    <div class="boxcontent formtaikhoan">
-                        <form action="#" method="post">
-
-                            <div class="row mb10">
-                            Ten Dang Nhap:<br>
-                            <input type="text" name="user" id="">
-                            </div>
-
-                            <div class="row mb10">
-                            Mat Khau:<br>
-                            <input type="password" name="pass" id="id">
-                            </div>
-
-                            <div class="row mb10">
-                            <input type="checkbox" name="" id="">
-                            Ghi nho tai khoan <br>
-                            </div>
-
-                            <div class="row mb10">
-                            <input type="submit" value="dang nhap">
-                            </div>
-                            
-                        </form>
-                        <li>
-                            <a href="#">Quen Mat Khau</a>
-                        </li>
-                        <li>
-                            <a href="#">Dang Ky</a>
-                        </li>
-                    </div>
-                </div>
-                <div class="row mb">
-                    <div class="boxtitle">Danh Muc</div>
-                    <div class="boxcontent2 menudoc">
-                        <ul>
-                            <?php
-                                foreach($dsdm as $dm){
-                                    extract($dm);
-                                    $linkdm="index.php?act=sanpham&iddanhmuc=".$id;
-                                    echo '<li><a href="'.$linkdm.'">'.$name.'</a></li>';
-                                }
-                            ?>
-                            <!-- <li><a href="#">Laptop</a></li>
-                            <li><a href="#">MayTinh</a></li>
-                            <li><a href="#">DienThoai</a></li>
-                            <li><a href="#">Camera</a></li> -->
-                        </ul>
-                    </div>
-                    <div class="boxfooter searbox">
-                        <form action="#" method="post">
-                            <input type="text" name="" id="">
-                        </form>
-                    </div>
-                </div>
+                <?php include "boxright.php"; ?>
             </div>
         </div> 
         

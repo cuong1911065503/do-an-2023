@@ -11,6 +11,16 @@
         if((isset($_GET['act']))&&($_GET['act']!="")){
             $act=$_GET['act'];
             switch ($act) {
+                case 'sanphamct':
+                    if(isset($_GET['idsp'])&&($_GET['idsp']>0)){
+                        $id=$_GET['idsp'];
+                        $onesp=loadOne_sanpham($id);
+                        # code...
+                        include "view/sanphamct.php";
+                    }else{
+                        include "view/home.php";
+                    }
+                    break;
                 case 'gioithieu':
                     # code...
                     include "view/gioithieu.php";

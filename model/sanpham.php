@@ -7,18 +7,6 @@ function delete_sanpham($id){
     $sql="delete from sanpham where id=".$id;
     pdo_execute($sql);
 }
-// function loadAll_sanpham($kyw,$iddanhmuc){
-//     $sql="select * from sanpham where 1";
-//     if($kyw!=""){
-//         $sql.=" and name like '%".$kyw."%'";
-//     }
-//     if($iddanhmuc>0){
-//         $sql.=" and iddanhmuc '".$iddanhmuc."'";
-//     }
-//     $sql.=" order by id desc";
-//     $listsanpham=pdo_query($sql);
-//     return $listsanpham; 
-// }
 function loadAll_sanpham_home(){
     $sql="select * from sanpham where 1 order by id desc limit 0,9";
     $listsanpham=pdo_query($sql);
@@ -26,8 +14,8 @@ function loadAll_sanpham_home(){
 }
 function loadOne_sanpham($id){
     $sql="select * from sanpham where id=".$id;
-    $dm=pdo_query_one($sql);
-    return $dm;
+    $sp=pdo_query_one($sql);
+    return $sp;
 }
 function update_sanpham($id,$iddanhmuc,$tensp,$giasp,$hinh,$mota){
     if($hinh!="")
