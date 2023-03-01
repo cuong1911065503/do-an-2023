@@ -17,6 +17,11 @@ function loadOne_sanpham($id){
     $sp=pdo_query_one($sql);
     return $sp;
 }
+function load_sanpham_cungloai($id){
+    $sql="select * from sanpham where id <>".$id;
+    $litsanpham=pdo_query($sql);
+    return $litsanpham;
+}
 function update_sanpham($id,$iddanhmuc,$tensp,$giasp,$hinh,$mota){
     if($hinh!="")
         $sql="update sanpham set name='".$iddanhmuc."', name='".$tensp."', gia='".$giasp."', img='".$hinh."', mota='".$mota."' where id=".$id;

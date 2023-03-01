@@ -15,6 +15,7 @@
                     if(isset($_GET['idsp'])&&($_GET['idsp']>0)){
                         $id=$_GET['idsp'];
                         $onesp=loadOne_sanpham($id);
+                        $sp_cung_loai=load_sanpham_cungloai($id);
                         # code...
                         include "view/sanphamct.php";
                     }else{

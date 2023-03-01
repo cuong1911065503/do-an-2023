@@ -12,7 +12,19 @@
         ?>
         </div>
     </div>
-           
+
+    <div class="row mb">
+        <div class="boxtitle">Sản Phẩm Cùng Loại</div>
+        <div class="row boxcontent">
+            <?php
+                foreach($sp_cung_loai as $sp_cung_loai){
+                    extract($sp_cung_loai);
+                    $linksp="index.php?act=sanphamct&idsp=".$id;
+                    echo '<li><a href="'.$linksp.'">'.$name.'</a></li>';
+                }
+            ?>
+        </div>
+        </div>
     </div>
         <div class="boxphai ">
             <?php include "boxright.php"; ?>
@@ -22,6 +34,10 @@
 <style>
 .spct{
     text-align: center;
+}
+.spct img{
+    width: 50%;
+    padding: auto;
 }
 </style>
 
