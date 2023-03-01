@@ -36,21 +36,24 @@
         <div class="boxcontent2 menudoc">
             <ul>
                 <?php
-                    foreach($spnew as $sp){
-                        extract($sp);
-                        $linksp="index.php?act=sanphamct&idsp=".$id;
-                        echo '<li><a href="'.$linksp.'">'.$name.'</a></li>';
-                    }
+                     foreach($dsdm as $dm){
+                         extract($dm);
+                         $linkdm="index.php?act=sanpham&iddanhmuc=".$id;
+                         echo '<li><a href="'.$linkdm.'">'.$name.'</a></li>';
+                     }
                 ?>
-                <!-- <li><a href="#">Laptop</a></li>
-                <li><a href="#">MayTinh</a></li>
-                <li><a href="#">DienThoai</a></li>
-                <li><a href="#">Camera</a></li> -->
             </ul>
         </div>
         <div class="boxfooter searbox">
-            <form action="#" method="post">
-                <input type="text" name="" id="">
+            <form action="index.php?act=sanphamct" method="post">
+                <input type="text" name="kyw">
+                <input type="submit" name="timkiem" value="Tìm kiếm">
             </form>
         </div>
     </div>
+    <style>
+    .boxtitle{
+        background-color: wheat;
+        
+    }
+</style>

@@ -7,7 +7,6 @@
         <?php 
             $img=$img_path.$img;
             echo '<div class="row mb spct"><img src="'.$img.'"></div>';
-            
             echo $mota;
         ?>
         </div>
@@ -37,7 +36,6 @@
 }
 .spct img{
     width: 50%;
-    padding: auto;
 }
 </style>
 

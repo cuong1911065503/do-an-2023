@@ -12,13 +12,32 @@ function loadAll_sanpham_home(){
     $listsanpham=pdo_query($sql);
     return $listsanpham; 
 }
+function loadAll_sanpham($kyw="",$iddanhmuc=0){
+    $sql="select * from sanpham where 1";
+    if ($kyw!="") {
+        # code...
+        $sql.=" and name like '%".$kyw."%'";
+    }
+    if($iddanhmuc>0){
+        $sql.=" and iddanhmuc ='".$iddanhmuc."'";
+    }
+    $sql.=" order by id desc";
+    $listsanpham=pdo_query($sql);
+    return $listsanpham;
+}
+function load_ten_danhmuc($iddanhmuc){
+    $sql="select * from danhmuc where id=".$iddanhmuc;
+    $dm=pdo_query_one($sql);
+    extract($dm);
+    return $name;
+}
 function loadOne_sanpham($id){
     $sql="select * from sanpham where id=".$id;
     $sp=pdo_query_one($sql);
     return $sp;
 }
-function load_sanpham_cungloai($id){
-    $sql="select * from sanpham where id <>".$id;
+function load_sanpham_cungloai($id, $iddanhmuc){
+    $sql="select * from sanpham where iddanhmuc=".$iddanhmuc." AND id <>".$id;
     $litsanpham=pdo_query($sql);
     return $litsanpham;
 }

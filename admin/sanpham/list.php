@@ -7,8 +7,8 @@
                     <select name="iddanhmuc">
                         <option value="0" selected>Tất Cả</option>
                         <?php
-                                foreach($listdanhmuc as $danhmuc){
-                                    extract($danhmuc);
+                                foreach($listsanpham as $sanpham){
+                                    extract($sanpham);
                                     echo '<option value='.$id.'>'.$name.'</option>';
                                 }
                             ?>

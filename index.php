@@ -7,15 +7,28 @@
 
     $spnew=loadAll_sanpham_home();
     $dsdm=loadAll_danhmuc();
+    $dssp=loadAll_sanpham();
 
         if((isset($_GET['act']))&&($_GET['act']!="")){
             $act=$_GET['act'];
             switch ($act) {
+                case 'sanpham':
+                    if(isset($_GET['iddanhmuc'])&&($_GET['iddanhmuc']>0)){
+                        $iddanhmuc=$_GET['iddanhmuc'];
+                        $dssp=loadAll_sanpham("",$iddanhmuc);
+                        $tendm=load_ten_danhmuc($iddanhmuc);
+                        # code...
+                        include "view/sanpham.php";
+                    }else{
+                        include "view/home.php";
+                    }
+                    break;
                 case 'sanphamct':
                     if(isset($_GET['idsp'])&&($_GET['idsp']>0)){
                         $id=$_GET['idsp'];
                         $onesp=loadOne_sanpham($id);
-                        $sp_cung_loai=load_sanpham_cungloai($id);
+                        extract($onesp);
+                        $sp_cung_loai=load_sanpham_cungloai($id,$iddanhmuc);
                         # code...
                         include "view/sanphamct.php";
                     }else{
