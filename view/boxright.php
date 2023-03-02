@@ -45,15 +45,14 @@
             </ul>
         </div>
         <div class="boxfooter searbox">
-            <form action="index.php?act=sanphamct" method="post">
+            <form action="index.php?act=sanpham" method="post">
                 <input type="text" name="kyw">
                 <input type="submit" name="timkiem" value="Tìm kiếm">
             </form>
         </div>
     </div>
     <style>
-    .boxtitle{
-        background-color: wheat;
-        
+    input[type="text"]{
+        margin-bottom: 20px;
     }
 </style>

@@ -26,10 +26,14 @@ function loadAll_sanpham($kyw="",$iddanhmuc=0){
     return $listsanpham;
 }
 function load_ten_danhmuc($iddanhmuc){
-    $sql="select * from danhmuc where id=".$iddanhmuc;
-    $dm=pdo_query_one($sql);
-    extract($dm);
-    return $name;
+    if($iddanhmuc>0){
+        $sql="select * from danhmuc where id=".$iddanhmuc;
+        $dm=pdo_query_one($sql);
+        extract($dm);
+        return $name;
+    }else{
+        return "";
+    }
 }
 function loadOne_sanpham($id){
     $sql="select * from sanpham where id=".$id;

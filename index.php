@@ -13,17 +13,22 @@
             $act=$_GET['act'];
             switch ($act) {
                 case 'sanpham':
+                    if(isset($_POST['kyw'])&&($_POST['kyw']!="")){
+                        $kyw=$_POST['kyw'];
+                    }else{
+                        $kyw="";
+                    }
                     if(isset($_GET['iddanhmuc'])&&($_GET['iddanhmuc']>0)){
                         $iddanhmuc=$_GET['iddanhmuc'];
-                        $dssp=loadAll_sanpham("",$iddanhmuc);
-                        $tendm=load_ten_danhmuc($iddanhmuc);
-                        # code...
-                        include "view/sanpham.php";
                     }else{
-                        include "view/home.php";
+                        $iddanhmuc=0;
                     }
+                    $dssp=loadAll_sanpham($kyw,$iddanhmuc);
+                    $tendm=load_ten_danhmuc($iddanhmuc);
+                    include "view/sanpham.php";
                     break;
                 case 'sanphamct':
+                    
                     if(isset($_GET['idsp'])&&($_GET['idsp']>0)){
                         $id=$_GET['idsp'];
                         $onesp=loadOne_sanpham($id);

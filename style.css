@@ -149,7 +149,8 @@ font-size:  0.7vw;
 .formtaikhoan input[type="submit"],
 .frmcontent input[type="submit"],
 .frmcontent input[type="reset"],
-.frmcontent input[type="button"] {
+.frmcontent input[type="button"],
+.boxfooter  input[type="submit"] {
     border-radius: 5px;
     padding: 5px 10px;
     background-color: red;
