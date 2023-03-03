@@ -136,6 +136,7 @@ font-size:  0.7vw;
     line-height: 150%;
 }
 .formtaikhoan input[type="text"],
+.formtaikhoan input[type="email"],
 .formtaikhoan input[type="password"],
 .frmcontent input[type="text"]{
     width: 100%;
@@ -149,6 +150,7 @@ font-size:  0.7vw;
 .formtaikhoan input[type="submit"],
 .frmcontent input[type="submit"],
 .frmcontent input[type="reset"],
+.formtaikhoan input[type="reset"],
 .frmcontent input[type="button"],
 .boxfooter  input[type="submit"] {
     border-radius: 5px;
@@ -333,4 +335,7 @@ animation-duration: 1.5s;
 @keyframes fade {
 from {opacity: .4}
 to {opacity: 1}
+}
+.thongbao{
+    color: red;
 }

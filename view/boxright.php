@@ -1,25 +1,50 @@
 <div class="row mb">
         <div class="boxtitle">Tai Khoan</div>
         <div class="boxcontent formtaikhoan">
-            <form action="#" method="post">
+            <?php
+                if (isset($_SESSION['user'])){
+                    extract($_SESSION['user']);
+            ?>
+                <div class="row mb10">
+                    Xin Chào : <?=$user?>
+                </div>
+
+                <div class="row mb10">
+                    <li>
+                        <a href="index.php?act=quenmatkhau">Quên Mật Khẩu</a>
+                    </li>
+                    <li>
+                        <a href="index.php?act=edit_taikhoan">Cập Nhật Tài Khoản</a>
+                    </li>
+                    <li>
+                        <a href="admin/index.php">Đăng Nhập Admin</a>
+                    </li>
+                    <li>
+                        <a href="index.php?act=thoat">Thoát</a>
+                    </li>
+                </div>
+            <?php
+                }else{
+            ?>
+            <form action="index.php?act=dangnhap" method="post">
 
                 <div class="row mb10">
                 Tên Đăng Nhập:<br>
-                <input type="text" name="user" id="">
+                <input type="text" name="user">
                 </div>
 
                 <div class="row mb10">
                 Mật Khẩu:<br>
-                <input type="password" name="pass" id="id">
+                <input type="password" name="pass">
                 </div>
 
                 <div class="row mb10">
-                <input type="checkbox" name="" id="">
+                <input type="checkbox" name="">
                 Ghi Nhớ Tài Khoản <br>
                 </div>
 
                 <div class="row mb10">
-                <input type="submit" value="dang nhap">
+                <input type="submit" value="Đăng Nhập" name="dangnhap">
                 </div>
                 
             </form>
@@ -27,8 +52,9 @@
                 <a href="#">Quên Mật Khẩu</a>
             </li>
             <li>
-                <a href="#">Đăng Ký</a>
+                <a href="index.php?act=dangky">Đăng Ký</a>
             </li>
+            <?php }?>
         </div>
     </div>
     <div class="row mb">

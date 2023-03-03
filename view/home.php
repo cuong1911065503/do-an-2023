@@ -46,9 +46,18 @@
                             }
                             $linksp="index.php?act=sanphamct&idsp=".$id;
                             echo '<div class="boxsp '.$mr.'">
-                                        <div class="row img "><img src="'.$hinh.'" alt=""></div>
+                                        <div class="row img"><img src="'.$hinh.'" alt=""></div>
                                         <p>$'.$gia.'</p>
                                         <a href="'.$linksp.'">'.$name.'</a>
+                                        <div class="row btnaddtocart">
+                                            <form action="index.php?act=addtocart" method="port">
+                                                <input type"hidden" name="id" value="'.$id.'">
+                                                <input type"hidden" name="name" value="'.$name.'">
+                                                <input type"hidden" name="img" value="'.$img.'">
+                                                <input type"hidden" name="gia" value="'.$gia.'">
+                                                <input type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+                                            </form>
+                                        </div>
                                     </div>';
                                     $i+-1;
                         }

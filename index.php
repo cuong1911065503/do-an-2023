@@ -1,9 +1,13 @@
 <?php
+    session_start();
     include "model/pdo.php";
     include "model/sanpham.php";
     include "model/danhmuc.php";
+    include "model/taikhoan.php";
     include "view/header.php";
     include "global.php";
+
+    if(!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
 
     $spnew=loadAll_sanpham_home();
     $dsdm=loadAll_danhmuc();
@@ -40,6 +44,25 @@
                         include "view/home.php";
                     }
                     break;
+                case 'addtocart':
+                    if(isset($_POST['addtocart'])&&($_POST['addtocart'])){
+                        $id=$_POST['id'];
+                        $name=$_POST['name'];
+                        $img=$_POST['img'];
+                        $gia=$_POST['gia'];
+                        $soluong=1;
+                        $ttien=$soluong * $gia;
+                        $spadd=[$id,$name,$img,$gia,$soluong,$ttien];
+                        array_push($_SESSION['mycart'],$spadd);
+                    }
+                    include "view/cart/viewcart.php";
+                    //header('Location: index.php?act=viewcart');
+                    break;
+    //////////////// VIEW CARD ////////////////////////////////////
+                case 'addtocart':
+                    include "view/cart/viewcart.php";
+                    break;
+    ///////////////////////////////////////////////////////////////////////////////////
                 case 'gioithieu':
                     # code...
                     include "view/gioithieu.php";
@@ -50,7 +73,40 @@
                 case 'gopy':
                     include "view/gopy.php";
                     break;
-                default:
+    ////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    //////////////// TAI KHOAN ???????????????????
+
+                case 'dangky':
+                    # code...
+                    if(isset($_POST['dangky'])&&($_POST['dangky'])){
+                        $email=$_POST['email'];
+                        $user=$_POST['user'];
+                        $pass=$_POST['pass'];
+                        insert_taikhoan($email,$user,$pass);
+                        $thongbao="Đã Đăng Ký Thành Công";
+                    }
+                    include "view/taikhoan/dangky.php";
+                    break;
+                case 'dangnhap':
+                    # code...
+                    if(isset($_POST['dangnhap'])&&($_POST['dangnhap'])){
+                        $user=$_POST['user'];
+                        $pass=$_POST['pass'];
+                        $check_user=check_user($user,$pass);
+                        if (is_array($check_user)) {
+                            # code...
+                            $_SESSION['user']=$check_user;
+                            //$thongbao="Bạn Đã Đăng Nhập Thành Công";
+                            header('Location: index.php');
+                        }else{
+                            $thongbao="Tài Khoản Không Tồn Tại";
+                        }
+                    }
+                    include "view/taikhoan/dangky.php";
+                    break;
+                    default:
                     # code...
                     include "view/home.php";
                     break;
