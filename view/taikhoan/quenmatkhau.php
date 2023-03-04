@@ -2,23 +2,16 @@
     <div class="boxtrai mr">
     <div class="row mb">
     
-        <div class="boxtitle">Dang ky thanh vien</div>
+        <div class="boxtitle">Quên Mật Khẩu</div>
         <div class="row boxcontent formtaikhoan">
-            <form action="index.php?act=dangky" method="post">
+            <form action="index.php?act=quenmatkhau" method="post">
                 <div class="row mb10">
                     Gmail
                     <input type="email" name="email">
                 </div>
+                
                 <div class="row mb10">
-                    Tên Đăng Nhập
-                    <input type="text" name="user">
-                </div>
-                <div class="row mb10">
-                    Mật Khẩu
-                    <input type="password" name="pass">
-                </div>
-                <div class="row mb10">
-                    <input type="submit" value="Dang ky" name="dangky">
+                    <input type="submit" value="Gửi" name="guiemail">
                     <input type="reset" value="Nhap lai">
                 </div>
                 

@@ -106,6 +106,42 @@
                     }
                     include "view/taikhoan/dangky.php";
                     break;
+                case 'edit_taikhoan':
+                    # code...
+                    if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
+                        $user=$_POST['user'];
+                        $pass=$_POST['pass'];
+                        $email=$_POST['email'];
+                        $address=$_POST['address'];
+                        $tel=$_POST['tel'];
+                        $id=$_POST['id'];
+                        
+                        update_taikhoan($id,$user,$pass,$email,$address,$tel);
+                        $_SESSION['user']=check_user($user,$pass);
+                        header('Location: index.php?act=edit_taikhoan');
+                    }
+                    include "view/taikhoan/edit_taikhoan.php";
+                    break;
+                case 'quenmatkhau':
+                    # code...
+                    if(isset($_POST['guiemail'])&&($_POST['guiemail'])){
+                        $email=$_POST['email'];
+                        $check_email=check_email($email);
+                        
+                        if(is_array($check_email)){
+                            $thongbao="Mật Khẩu Của Bạn Là:".$check_email['pass'];
+                        }else{
+                            $thongbao="Email này không tồn tại";
+                        }
+                        
+                    }
+                    include "view/taikhoan/quenmatkhau.php";
+                    break;
+                case 'thoat':
+                    session_unset();
+                    header('Location: index.php');
+                    include "view/taikhoan/thoat.php";
+                    break;
                     default:
                     # code...
                     include "view/home.php";
