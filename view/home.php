@@ -33,7 +33,7 @@
                     <span class="dot" onclick="currentSlide(3)"></span>
                     </div>
                 </div>
-                <div class="row ">
+                <div class="row "> 
                     <?php
                         $i=0;
                         foreach($spnew as $sp){
@@ -50,12 +50,12 @@
                                         <p>$'.$gia.'</p>
                                         <a href="'.$linksp.'">'.$name.'</a>
                                         <div class="row btnaddtocart">
-                                            <form action="index.php?act=addtocart" method="port">
-                                                <input type"hidden" name="id" value="'.$id.'">
-                                                <input type"hidden" name="name" value="'.$name.'">
-                                                <input type"hidden" name="img" value="'.$img.'">
-                                                <input type"hidden" name="gia" value="'.$gia.'">
-                                                <input type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+                                            <form action="index.php?act=viewcart" method="post">
+                                                <input type="hidden" name="id" value="'.$id.'">
+                                                <input type="hidden" name="name" value="'.$name.'">
+                                                <input type="hidden" name="img" value="'.$img.'">
+                                                <input type="hidden" name="gia" value="'.$gia.'">
+                                                <input type="submit" value="Đăng Nhập" name="viewcart">
                                             </form>
                                         </div>
                                     </div>';

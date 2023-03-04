@@ -1,5 +1,5 @@
 <div class="row mb">
-        <div class="boxtitle">Tai Khoan</div>
+        <div class="boxtitle">Tài Khoản</div>
         <div class="boxcontent formtaikhoan">
             <?php
                 if (isset($_SESSION['user'])){
@@ -16,9 +16,11 @@
                     <li>
                         <a href="index.php?act=edit_taikhoan">Cập Nhật Tài Khoản</a>
                     </li>
+                    <?php if($role==1){?>
                     <li>
                         <a href="admin/index.php">Đăng Nhập Admin</a>
                     </li>
+                    <?php }?>
                     <li>
                         <a href="index.php?act=thoat">Thoát</a>
                     </li>

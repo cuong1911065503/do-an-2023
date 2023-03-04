@@ -233,17 +233,38 @@ font-size:  0.7vw;
     background-color: #CCC;
 }
 .frmdsloai table th:nth-child(2){
-    width: 30%;
+    width: 15%;
     background-color: #CCC;
 }
 .frmdsloai table th:nth-child(3){
-    width: 40%;
+    width: 15%;
     background-color: #CCC;
 }
 .frmdsloai table th:nth-child(4){
     width: 20%;
     background-color: #CCC;
 }
+.frmdsloai table th:nth-child(5){
+    width: 20%;
+    background-color: #CCC;
+}
+.frmdsloai table th:nth-child(6){
+    width: 20%;
+    background-color: #CCC;
+}
+.frmdsloai table th:nth-child(7){
+    width: 20%;
+    background-color: #CCC;
+}
+.frmdsloai table th:nth-child(8){
+    width: 20%;
+    background-color: #CCC;
+}
+.frmdsloai table th:nth-child(9){
+    width: 20%;
+    background-color: #CCC;
+}
+
 .frmdsloai table td{
     padding: 10px 20px;
     border: 1px #CCC solid;

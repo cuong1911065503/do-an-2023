@@ -2,7 +2,7 @@
     <div class="boxtrai mr">
         <div class="row mb">
             <div class="boxtitle">Giỏ Hàng</div>
-            <div class="row boxcontent cart">
+            <div class="row mb10 frmdsloai">
                 <table>
                     <tr>
                         <th>hình</th>

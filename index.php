@@ -6,6 +6,7 @@
     include "model/taikhoan.php";
     include "view/header.php";
     include "global.php";
+    
 
     if(!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
 
@@ -44,8 +45,8 @@
                         include "view/home.php";
                     }
                     break;
-                case 'addtocart':
-                    if(isset($_POST['addtocart'])&&($_POST['addtocart'])){
+                case 'viewcart':
+                    if(isset($_POST['viewcart'])&&($_POST['viewcart'])){
                         $id=$_POST['id'];
                         $name=$_POST['name'];
                         $img=$_POST['img'];
@@ -58,10 +59,8 @@
                     include "view/cart/viewcart.php";
                     //header('Location: index.php?act=viewcart');
                     break;
-    //////////////// VIEW CARD ////////////////////////////////////
-                case 'addtocart':
-                    include "view/cart/viewcart.php";
-                    break;
+    
+                
     ///////////////////////////////////////////////////////////////////////////////////
                 case 'gioithieu':
                     # code...

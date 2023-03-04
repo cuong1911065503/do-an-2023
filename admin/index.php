@@ -2,6 +2,7 @@
     include "../model/pdo.php";
     include "../model/danhmuc.php";
     include "../model/sanpham.php";
+    include "../model/taikhoan.php";
     include "header.php";
     // controller
 
@@ -135,6 +136,11 @@
                 include "sanpham/list.php";
                 break;
 
+
+            case'dskhachhang':
+                $listtaikhoan=loadAll_taikhoan();
+                include "taikhoan/list.php";
+            break;
 
             default:
             include "home.php";

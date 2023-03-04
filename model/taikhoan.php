@@ -17,4 +17,9 @@
         $sql="update taikhoan set user='".$user."', pass='".$pass."', email='".$email."', address='".$address."', tel='".$tel."' where id=".$id;
         pdo_execute($sql);
     }
+    function loadAll_taikhoan(){
+        $sql="select * from taikhoan order by id desc";
+        $listtaikhoan=pdo_query($sql);
+        return $listtaikhoan; 
+    }
 ?>
