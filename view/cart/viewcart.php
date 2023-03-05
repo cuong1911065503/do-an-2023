@@ -3,6 +3,7 @@
         <div class="row mb">
             <div class="boxtitle">Giỏ Hàng</div>
             <div class="row mb10 frmdsloai">
+            
                 <table>
                     <tr>
                         <th>hình</th>
@@ -14,18 +15,24 @@
                     </tr>
                     <?php 
                     $tong=0;
+                    $i=0;
                         foreach($_SESSION['mycart'] as $cart){
                             $hinh=$img_path.$cart[2];
                             $ttien=$cart[3]*$cart[4];
                             $tong+=$ttien;
+                            $xoasanpham='<a href="index.php?act=delcart&idcart='.$i.'"><input type="button" value="xóa"></a>';
+                            //$xoasanpham="index.php?act=delcart&idcart='.$i.'";
+                            
                             echo '<tr>
                                     <td><img src="'.$hinh.'" alt="" height="80px"></td>
                                     <td>'.$cart[1].'</td>
                                     <td>'.$cart[3].'</td>
                                     <td>'.$cart[4].'</td>
                                     <td>'.$ttien.'</td>
-                                    <td><input type="button" value="xóa"></td>
+                                    <td>'.$xoasanpham.'</td>
                         </tr>';
+                        
+                        $i+=1;
                         }
                         echo '<tr>
                                 <td colspan="4">Tong Don Hang</td>

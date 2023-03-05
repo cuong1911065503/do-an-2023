@@ -59,8 +59,16 @@
                     include "view/cart/viewcart.php";
                     //header('Location: index.php?act=viewcart');
                     break;
-    
-                
+                case 'delcart':
+                    if(isset($_GET['idcart'])&&($_GET['idcart'])>=0){
+                        array_splice($_SESSION['mycart'],$_GET['idcart'],1);
+                       
+                    }else{
+                        $_SESSION['mycart']=[];
+                    }
+                    
+                    header('Location: index.php?act=viewcart');
+                    break;
     ///////////////////////////////////////////////////////////////////////////////////
                 case 'gioithieu':
                     # code...
@@ -136,6 +144,7 @@
                     }
                     include "view/taikhoan/quenmatkhau.php";
                     break;
+                
                 case 'thoat':
                     session_unset();
                     header('Location: index.php');

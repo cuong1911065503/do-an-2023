@@ -54,8 +54,8 @@
                                                 <input type="hidden" name="id" value="'.$id.'">
                                                 <input type="hidden" name="name" value="'.$name.'">
                                                 <input type="hidden" name="img" value="'.$img.'">
-                                                <input type="hidden" name="gia" value="'.$gia.'">
-                                                <input type="submit" value="Đăng Nhập" name="viewcart">
+                                                <input type="hidden" name="gia" value="'.$gia.'"></br>
+                                                <input type="submit" value="Mua Sản Phẩm" name="viewcart">
                                             </form>
                                         </div>
                                     </div>';
