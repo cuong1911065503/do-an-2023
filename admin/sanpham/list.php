@@ -3,6 +3,7 @@
         <h1>DANH MỤC SẢN PHẨM</h1>
     </div>
         <form action="index.php?act=listsanpham" method="post">
+        <div class="mb10">Tìm Kiếm</div>
                     <input type="text" name="kyw">
                     <select name="iddanhmuc">
                         <option value="0" selected>Tất Cả</option>
@@ -19,12 +20,10 @@
         <div class="row mb10 frmdsloai">
             <table>
             <tr>
-                <th></th>
-                <th>Mã Loại</th>
+                <th>ID Mã Loại</th>
                 <th>Tên Sản Phẩm</th>
                 <th>Hình Ảnh</th>
                 <th>Giá</th>
-                <th>Lượt Xem</th>
                 <th></th>
             </tr>
             <?php
@@ -39,24 +38,15 @@
                     $hinh="no photo";
                 }
                 echo '<tr>
-                <td><input type="checkbox" name="" id=""></td>
                 <td>'.$id.'</td>
                 <td>'.$name.'</td>
                 <td>'.$hinh.'</td>
                 <td>'.$gia.'</td>
-                <td>'.$luotxem.'</td>
                 <td><a href="'.$suasanpham.'"><input type="button" value="Sửa"></a> <a href="'.$xoasanpham.'"><input type="button" value="Xóa"></a></td>
                 </tr>';
             }
             ?>
-            
             </table>
-        </div>
-            <div class="row mb10">
-            <input type="button" value="Chọn tất cả">
-            <input type="button" value="Bỏ Chọn">
-            <input type="button" value="Xóa Các mục đã chọn">
-            <a href="#"><input type="button" value="Nhập Thêm"></a>
         </div>
     </div>
 </div>

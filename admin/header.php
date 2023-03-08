@@ -18,9 +18,7 @@
                 <li><a href="index.php?act=adddanhmuc">Danh Mục</a></li>
                 <li><a href="index.php?act=addsanpham">Hàng Hóa</a></li>
                 <li><a href="index.php?act=dskhachhang">Khách Hàng</a></li>
-                <li><a href="index.php?act=dsbinhchon">Bình Chọn</a></li>
-                <li><a href="index.php?act=thongke">Thống Kê</a></li>
             </ul>
         </div>
-        
+            
         

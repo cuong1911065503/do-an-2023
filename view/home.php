@@ -32,8 +32,10 @@
                     <span class="dot" onclick="currentSlide(2)"></span>
                     <span class="dot" onclick="currentSlide(3)"></span>
                     </div>
+                    <div class="mb10"></div>
                 </div>
-                <div class="row "> 
+                
+                <div class="row"> 
                     <?php
                         $i=0;
                         foreach($spnew as $sp){
@@ -69,5 +71,6 @@
                 <?php include "boxright.php"; ?>
             </div>
         </div> 
+    
         
     

@@ -4,6 +4,7 @@
     include "model/sanpham.php";
     include "model/danhmuc.php";
     include "model/taikhoan.php";
+    include "model/cart.php";
     include "view/header.php";
     include "global.php";
     
@@ -69,20 +70,13 @@
                     
                     header('Location: index.php?act=viewcart');
                     break;
-    ///////////////////////////////////////////////////////////////////////////////////
-                case 'gioithieu':
-                    # code...
-                    include "view/gioithieu.php";
+                case 'bill':
+                    include "view/cart/bill.php";
                     break;
-                case 'lienhe':
-                    include "view/lienhe.php";
+                case 'billcomfirm':
+                    include "view/cart/billcomfirm.php";
                     break;
-                case 'gopy':
-                    include "view/gopy.php";
-                    break;
-    ////////////////////////////////////////////////////////////////////////////////////
-    
-    
+   
     //////////////// TAI KHOAN ???????????????????
 
                 case 'dangky':

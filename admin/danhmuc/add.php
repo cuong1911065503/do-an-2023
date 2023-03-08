@@ -15,7 +15,6 @@
             </div>
             <div class="row mb10">
                 <input type="submit" name="themmoi" value="Thêm Loại">
-                <input type="reset" value="Nhập Loại">
                 <a href="index.php?act=listdanhmuc"><input type="button" value="Danh Sách"></a>
             </div>
             <?php

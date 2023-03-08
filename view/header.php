@@ -15,10 +15,10 @@
         <div class="row mb menu">
             <ul>
                 <li><a href="index.php">Trang Chủ</a></li>
-                <li><a href="index.php?act=gioithieu">Giới Thiệu</a></li>
-                <li><a href="index.php?act=lienhe">Liên Hệ</a></li>
+                <li><a href="index.php?act=viewcart">Giỏ Hàng</a></li>
+                <!-- <li><a href="index.php?act=lienhe">Liên Hệ</a></li>
                 <li><a href="index.php?act=gopy">Góp Ý</a></li>
-                <li><a href="index.php?act=hoidap">Hỏi Đáp</a></li>
+                <li><a href="index.php?act=hoidap">Hỏi Đáp</a></li>  -->
             </ul>
         </div>
 

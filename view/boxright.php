@@ -61,7 +61,7 @@
     </div>
     <div class="row mb">
         <div class="boxtitle">Danh Mục</div>
-        <div class="boxcontent2 menudoc">
+        <div class="mb10 boxcontent2 menudoc">
             <ul>
                 <?php
                      foreach($dsdm as $dm){
@@ -74,6 +74,7 @@
         </div>
         <div class="boxfooter searbox">
             <form action="index.php?act=sanpham" method="post">
+                <div class="mb10">Tìm Kiếm</div>
                 <input type="text" name="kyw">
                 <input type="submit" name="timkiem" value="Tìm kiếm">
             </form>

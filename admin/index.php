@@ -48,8 +48,7 @@
                 if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
                     $tenloai=$_POST['tenloai'];
                     $id=$_POST['id'];
-                    $update_danhmuc($id,$tenloai);
-                    $thongbao="Cập Nhật Thành Công";
+                    update_danhmuc($id,$tenloai);
                 }
                 $listdanhmuc=loadAll_danhmuc();
                 include "danhmuc/list.php";
@@ -90,7 +89,7 @@
                         $kyw='';
                         $iddanhmuc=0;
                     }
-                    $listsanpham=loadAll_sanpham_home($kyw,$iddanhmuc);
+                    $listsanpham=loadAll_sanpham($kyw,$iddanhmuc);
                     $listdanhmuc=loadAll_danhmuc();
                     include "sanpham/list.php";
             break;
@@ -136,12 +135,26 @@
                 include "sanpham/list.php";
                 break;
 
-
             case'dskhachhang':
                 $listtaikhoan=loadAll_taikhoan();
                 include "taikhoan/list.php";
             break;
-
+            
+            case'xoataikhoan':
+                if (isset($_GET['id'])&&($_GET['id']>0)) {
+                    # code...
+                    delete_taikhoan($_GET['id']);
+                }
+                $listtaikhoan=loadAll_taikhoan();
+                include "taikhoan/list.php";
+            break;
+            case'suataikhoan':
+                if (isset($_GET['id'])&&($_GET['id']>0)) {
+                    $taikhoan=loadOne_taikhoan($_GET['id']);
+                }
+                $listtaikhoan=loadAll_taikhoan();
+                include "sanpham/update.php";
+            break;
             default:
             include "home.php";
             break;
@@ -150,6 +163,6 @@
         include "home.php";
     }
 
-    include "home.php";
+    //include "home.php";
     include "footer.php";
 ?>
